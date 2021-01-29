@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import styled from 'styled-components';
 
 
 
@@ -37,28 +38,69 @@ function App() {
 
 
   return (
-    <div >
-     <button onClick={getMarketData}>Get Currency Data</button>
-      <h1>Active Crypto Currencies: {currencyData.active_cryptocurrencies}</h1>
-      <h2>Market Cap Change Percentage (24HRS): {currencyData.market_cap_change_percentage_24h_usd}</h2>
-      <h2>Markets: {currencyData.markets}</h2>
-      <h2>Ongoing Initial Coin Offering: {currencyData.ongoing_icos}</h2>
-      <h1>Ended InitialCoin Offering: {currencyData.ended_icos}</h1>
-      <h2>Upcoming Initial Coin Offering: {currencyData.upcoming_icos}</h2>
+    <StyledPage >
 
-      <h1>Coin Market Cap: </h1>
-        <p>ADA: {currency.ada}</p>
-        <p>BCH: {currency.bch}</p>
-        <p>BTC: {currency.btc}</p>
-        <p>ETH: {currency.eth}</p>
-        <p>LINK: {currency.link}</p>
-        <p>LTC: {currency.ltc}</p>
-        <p>USDT: {currency.usdt}</p>
-        <p>XLM: {currency.xlm}</p>
-        <p>XRP: {currency.xrp}</p>
+      
+     <Button onClick={getMarketData}>Get Currency Data</Button>
+      <H1>Active Crypto Currencies: {currencyData.active_cryptocurrencies}</H1>
+      <H1>Market Cap Change Percentage (24HRS): {currencyData.market_cap_change_percentage_24h_usd}</H1>
+      <H1>Markets: {currencyData.markets}</H1>
+      <H1>Ongoing Initial Coin Offering: {currencyData.ongoing_icos}</H1>
+      <H1>Ended InitialCoin Offering: {currencyData.ended_icos}</H1>
+      <H1>Upcoming Initial Coin Offering: {currencyData.upcoming_icos}</H1>
 
-    </div>
+      <H1>Coin Market Cap: </H1>
+      <CryptoDiv>
+        <P>ADA: {currency.ada}</P>
+        <P>BCH: {currency.bch}</P>
+        <P>BTC: {currency.btc}</P>
+        <P>ETH: {currency.eth}</P>
+        <P>LINK: {currency.link}</P>
+        <P>LTC: {currency.ltc}</P>
+        <P>USDT: {currency.usdt}</P>
+        <P>XLM: {currency.xlm}</P>
+        <P>XRP: {currency.xrp}</P>
+
+      </CryptoDiv>
+
+    </StyledPage>
   );
 }
 
 export default App;
+
+const Button = styled.button`
+color:white;
+background:none;
+border:1px solid white;
+border-radius:8px;
+padding:1rem;
+font-size:1rem;
+
+`
+const StyledPage = styled.div`
+background-color:black;
+`
+
+const CryptoDiv = styled.div`
+display:flex;
+flex-direction:row;
+align-items:center;
+flex-wrap:wrap;
+border:3px solid white;
+justify-content:center;
+
+`
+
+const H1 = styled.h1 `
+color:white;
+
+`
+
+const P = styled.p`
+
+color:white;
+border:1px solid white;
+margin:2rem;
+padding:3rem;
+`

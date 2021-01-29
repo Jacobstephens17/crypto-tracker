@@ -49,18 +49,17 @@ function App() {
       <H1>Ended InitialCoin Offering: {currencyData.ended_icos}</H1>
       <H1>Upcoming Initial Coin Offering: {currencyData.upcoming_icos}</H1>
 
-      <H1>Coin Market Cap: </H1>
+      <H1>Individual Coin Market Cap: </H1>
       <CryptoDiv>
-        <P>ADA: {currency.ada}</P>
-        <P>BCH: {currency.bch}</P>
-        <P>BTC: {currency.btc}</P>
-        <P>ETH: {currency.eth}</P>
-        <P>LINK: {currency.link}</P>
-        <P>LTC: {currency.ltc}</P>
-        <P>USDT: {currency.usdt}</P>
-        <P>XLM: {currency.xlm}</P>
-        <P>XRP: {currency.xrp}</P>
-
+          <P>ADA: {currency.ada}</P>
+          <P>BCH: {currency.bch}</P>
+          <P>BTC: {currency.btc}</P>
+          <P>ETH: {currency.eth}</P>
+          <P>LINK: {currency.link}</P>
+          <P>LTC: {currency.ltc}</P>
+          <P>USDT: {currency.usdt}</P>
+          <P>XLM: {currency.xlm}</P>
+          <P>XRP: {currency.xrp}</P>
       </CryptoDiv>
 
     </StyledPage>
@@ -79,6 +78,10 @@ font-size:1rem;
 
 `
 const StyledPage = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 background-color:black;
 `
 
@@ -87,7 +90,6 @@ display:flex;
 flex-direction:row;
 align-items:center;
 flex-wrap:wrap;
-border:3px solid white;
 justify-content:center;
 
 `
